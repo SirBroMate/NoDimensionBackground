@@ -1,0 +1,33 @@
+{
+	"schemaVersion": 1,
+	"id": "nodimensionbackground",
+	"version": "${version}",
+	"name": "No Dimension Background",
+	"description": "Removes background from dimension transition screen",
+	"authors": [
+		"SirBroMate"
+	],
+	"contact": {
+		"sources": "https://github.com/SirBroMate/NoDimensionBackground"
+	},
+	"license": "CC0-1.0",
+	"icon": "assets/nodimensionbackground/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"modmenu": [
+			"net.sirbromate.nodimensionbackground.ModMenuImpl"
+		]
+	},
+	"mixins": [
+		"nodimensionbackground.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.15.10",
+		"minecraft": "~1.20.5",
+		"java": ">=21"
+	},
+	"suggests": {
+		"modmenu": "*",
+		"cloth-config": "*"
+	}
+}
