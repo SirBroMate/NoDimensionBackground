@@ -33,7 +33,7 @@ public class DownloadingTerrainScreenMixin extends Screen {
 
     /**
      * @author SirBroMate
-     * @reason Warp every case in condition
+     * @reason Wrap every case in condition
      */
     @Overwrite
     public void renderBackground(DrawContext context, int mouseX, int mouseY, float delta) {
