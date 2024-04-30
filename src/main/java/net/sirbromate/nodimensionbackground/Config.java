@@ -15,6 +15,7 @@ public class Config {
     private static final Path CONFIG = FabricLoader.getInstance().getConfigDir().resolve("nodimensionbackground.properties");
     public static boolean disableNetherBackground = true;
     public static boolean disableEndBackground = true;
+    public static boolean disableLoadingPanoramaBackground = false;
 
     static {
         try (BufferedReader reader = Files.newBufferedReader(CONFIG)) {
@@ -23,6 +24,7 @@ public class Config {
 
             Config.disableNetherBackground = Boolean.parseBoolean(properties.getProperty("disable_nether_background"));
             Config.disableEndBackground = Boolean.parseBoolean(properties.getProperty("disable_end_background"));
+            Config.disableEndBackground = Boolean.parseBoolean(properties.getProperty("disable_other_background"));
         } catch (Exception e) {
             save();
         }
@@ -32,6 +34,7 @@ public class Config {
         Properties properties = new Properties();
         properties.put("disable_nether_background", String.valueOf(Config.disableNetherBackground));
         properties.put("disable_end_background", String.valueOf(Config.disableEndBackground));
+        properties.put("disable_loading_panorama_background", String.valueOf(Config.disableLoadingPanoramaBackground));
 
         try (BufferedWriter writer = Files.newBufferedWriter(CONFIG)) {
             properties.store(writer, "No Dimension Background config file");

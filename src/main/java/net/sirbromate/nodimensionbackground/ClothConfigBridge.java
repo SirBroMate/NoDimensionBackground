@@ -26,6 +26,11 @@ public class ClothConfigBridge implements ConfigScreenFactory<Screen> {
                 .setSaveConsumer(b -> Config.disableEndBackground = b)
                 .build());
 
+        category.addEntry(entryBuilder.startBooleanToggle(Text.translatable("nodimensionbackground.config.disableLoadingPanoramaBackground"), Config.disableLoadingPanoramaBackground)
+                .setDefaultValue(false)
+                .setSaveConsumer(b -> Config.disableLoadingPanoramaBackground = b)
+                .build());
+
         return builder.build();
     }
 }

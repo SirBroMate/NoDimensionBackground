@@ -1,5 +1,6 @@
 {
   "nodimensionbackground.config.title": "No Portal Background config",
   "nodimensionbackground.config.disablenetherbackground": "Disable nether transition background",
-  "nodimensionbackground.config.disableendbackground": "Disable end transition background"
+  "nodimensionbackground.config.disableendbackground": "Disable end transition background",
+  "nodimensionbackground.config.disableLoadingPanoramaBackground": "Disable panorama in loading screen with programmer art enabled."
 }
