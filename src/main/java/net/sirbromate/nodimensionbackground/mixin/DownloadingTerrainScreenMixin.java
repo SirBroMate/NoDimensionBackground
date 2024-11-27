@@ -42,7 +42,7 @@ public class DownloadingTerrainScreenMixin extends Screen {
                 if (Config.disableNetherBackground) {
                     Screen.renderBackgroundTexture(context, Screen.MENU_BACKGROUND_TEXTURE, 0, 0, 0.0f, 0.0f, this.width, this.height);
                 } else {
-                    context.drawSprite(0, 0, -90, context.getScaledWindowWidth(), context.getScaledWindowHeight(), this.getBackgroundSprite());
+                    context.drawSpriteStretched(RenderLayer::getGuiOpaqueTexturedBackground, this.getBackgroundSprite(), 0, 0, context.getScaledWindowWidth(), context.getScaledWindowHeight());
                 }
                 break;
             case 1:
@@ -57,7 +57,7 @@ public class DownloadingTerrainScreenMixin extends Screen {
                     Screen.renderBackgroundTexture(context, Screen.MENU_BACKGROUND_TEXTURE, 0, 0, 0.0f, 0.0f, this.width, this.height);
                 } else {
                     this.renderPanoramaBackground(context, delta);
-                    this.applyBlur(delta);
+                    this.applyBlur();
                     this.renderDarkening(context);
                 }
         }
