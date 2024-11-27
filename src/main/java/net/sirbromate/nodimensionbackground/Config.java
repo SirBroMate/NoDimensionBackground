@@ -41,5 +41,5 @@ public class Config {
         } catch (IOException e) {
             LogManager.getLogger(Config.class).error(e.getMessage(), e);
         }
-    }
+    }    
 }
