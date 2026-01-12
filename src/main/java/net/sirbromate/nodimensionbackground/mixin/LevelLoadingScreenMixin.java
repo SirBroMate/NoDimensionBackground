@@ -8,6 +8,7 @@ import net.minecraft.client.gui.DrawContext;
 import net.minecraft.client.gui.screen.world.LevelLoadingScreen;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.render.block.entity.AbstractEndPortalBlockEntityRenderer;
+import net.minecraft.client.texture.AbstractTexture;
 import net.minecraft.client.texture.Sprite;
 import net.minecraft.client.texture.TextureManager;
 import net.minecraft.client.texture.TextureSetup;
@@ -52,7 +53,9 @@ public class LevelLoadingScreenMixin extends Screen {
                     Screen.renderBackgroundTexture(context, Screen.MENU_BACKGROUND_TEXTURE, 0, 0, 0.0f, 0.0f, this.width, this.height);
                 } else {
                     TextureManager textureManager = MinecraftClient.getInstance().getTextureManager();
-                    TextureSetup textureSetup = TextureSetup.of(textureManager.getTexture(AbstractEndPortalBlockEntityRenderer.SKY_TEXTURE).getGlTextureView(), textureManager.getTexture(AbstractEndPortalBlockEntityRenderer.PORTAL_TEXTURE).getGlTextureView());
+                    AbstractTexture abstractTexture = textureManager.getTexture(AbstractEndPortalBlockEntityRenderer.SKY_TEXTURE);
+                    AbstractTexture abstractTexture2 = textureManager.getTexture(AbstractEndPortalBlockEntityRenderer.PORTAL_TEXTURE);
+                    TextureSetup textureSetup = TextureSetup.of(abstractTexture.getGlTextureView(), abstractTexture.getSampler(), abstractTexture2.getGlTextureView(), abstractTexture2.getSampler());
                     context.fill(RenderPipelines.END_PORTAL, textureSetup, 0, 0, this.width, this.height);
                 }
                 break;
