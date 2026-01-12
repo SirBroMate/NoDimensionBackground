@@ -24,7 +24,7 @@ public class Config {
 
             Config.disableNetherBackground = Boolean.parseBoolean(properties.getProperty("disable_nether_background"));
             Config.disableEndBackground = Boolean.parseBoolean(properties.getProperty("disable_end_background"));
-            Config.disableEndBackground = Boolean.parseBoolean(properties.getProperty("disable_other_background"));
+            Config.disableLoadingPanoramaBackground = Boolean.parseBoolean(properties.getProperty("disable_loading_panorama_background"));
         } catch (Exception e) {
             save();
         }
